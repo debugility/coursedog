@@ -1,0 +1,21 @@
+{
+  "name": "coursedog",
+  "version": "1.0.0",
+  "description": "coursdog-test-project",
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "test:ui": "playwright test --ui"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.4.13",
+    "@faker-js/faker": "10.4.0",
+    "@playwright/test": "1.59.1",
+    "allure-playwright": "3.7.1",
+    "dotenv": "17.4.2",
+    "typescript": "6.0.3"
+  }
+}
