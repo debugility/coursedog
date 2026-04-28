@@ -318,6 +318,14 @@ export class ElementWrapper {
 		await expect(this.playwrightLocator).toHaveClass(className);
 	}
 
+	async haveAttribute(name: string, value?: string | RegExp): Promise<void> {
+		if (value === undefined) {
+			await expect(this.playwrightLocator).toHaveAttribute(name, /.*/);
+			return;
+		}
+		await expect(this.playwrightLocator).toHaveAttribute(name, value);
+	}
+
 	async haveSelectedValue(value: string | RegExp): Promise<void> {
 		await expect(this.playwrightLocator).toHaveValue(value);
 	}
@@ -333,6 +341,10 @@ export class ElementWrapper {
 
 	async haveValue(value: string): Promise<void> {
 		await expect(this.playwrightLocator).toHaveValue(value);
+	}
+
+	async toHaveCount(count: number): Promise<void> {
+		await expect(this.playwrightLocator).toHaveCount(count);
 	}
 
 	/** Assert the element does not contain the given text. */
