@@ -339,7 +339,7 @@ export class ElementWrapper {
 		await expect(this.playwrightLocator).toHaveText(text);
 	}
 
-	async haveValue(value: string): Promise<void> {
+	async haveValue(value: string | RegExp): Promise<void> {
 		await expect(this.playwrightLocator).toHaveValue(value);
 	}
 
