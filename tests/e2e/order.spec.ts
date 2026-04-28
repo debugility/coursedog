@@ -1,16 +1,16 @@
-const { test } = require("@playwright/test");
-const { HomePage } = require("../../pages/home.pg.ts");
-const { LoginPage } = require("../../pages/login.pg.ts");
-const { ShippingDetailsPage } = require("../../pages/shippingDetails.pg.ts");
-const { SessionHandler } = require("../../utils/handlers/sessionHandler.hd.ts");
-const {
+import { test } from "@playwright/test";
+import { HomePage } from "../../pages/home.pg";
+import { LoginPage } from "../../pages/login.pg";
+import { ShippingDetailsPage } from "../../pages/shippingDetails.pg";
+import { SessionHandler } from "../../utils/handlers/sessionHandler.hd";
+import {
 	getFakeCity,
 	getFakeCountry,
 	getFakePhone,
 	getFakeStreet,
-} = require("../../utils/helpers/faker.hp.ts");
+} from "../../utils/helpers/faker.hp";
 
-function parsePrice(text) {
+function parsePrice(text: string): number {
 	return Number.parseFloat(text.replace("$", "").trim());
 }
 
